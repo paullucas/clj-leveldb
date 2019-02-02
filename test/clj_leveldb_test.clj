@@ -10,6 +10,11 @@
     [java.io
      File]))
 
+(defn nil-pun
+  "Convert nil values to string literal 'nil'.
+  Workaround for bs/to-char-sequence not handling nil values."
+  [x]
+  (or x "nil"))
 
 (def db
   (l/create-db
@@ -17,7 +22,9 @@
       .deleteOnExit)
     {:key-encoder name
      :key-decoder (comp keyword bs/to-string)
-     :val-decoder (comp edn/read-string bs/to-char-sequence)
+     :val-decoder (comp edn/read-string
+                        bs/to-char-sequence
+                        nil-pun)
      :val-encoder pr-str}))
 
 (deftest test-basic-operations
