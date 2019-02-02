@@ -1,10 +1,23 @@
 This is a self-contained wrapper around [LevelDB](https://code.google.com/p/leveldb/), which provides all the necessary binaries via [leveldbjni](https://github.com/fusesource/leveldbjni).
 
-### basic usage
+### Fork Notes
+- Fixed tests
+- Upgraded dependencies
+- Added deps.edn file (with test-runner)
+- Deprecated codox integration (due to broken codox-md dependency)
 
-```clj
-[factual/clj-leveldb "0.1.2"]
+deps.edn
+``` clj
+{paullucas/clj-leveldb {:git/url "https://github.com/paullucas/clj-leveldb.git"
+                        :sha "9304c7b61ae73bea9c9e284a3e820759b75c1d57"}}
 ```
+
+Run tests
+``` sh
+clj -Atest
+```
+
+### basic usage
 
 To create or access a database, use `clj-leveldb/create-db`:
 
