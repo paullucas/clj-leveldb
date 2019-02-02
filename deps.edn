@@ -1,0 +1,15 @@
+{:paths ["src"]
+ :deps
+ {org.fusesource.leveldbjni/leveldbjni-all {:mvn/version "1.8"}
+  org.iq80.leveldb/leveldb-api {:mvn/version "0.10"}
+  byte-streams {:mvn/version "0.2.4"}}
+ :aliases
+ {:dev
+  {:extra-deps {criterium {:mvn/version "0.4.4"}}}
+  :test
+  {:extra-paths ["test"]
+   :extra-deps
+   {com.cognitect/test-runner
+    {:git/url "https://github.com/cognitect-labs/test-runner.git"
+     :sha "cb96e80f6f3d3b307c59cbeb49bb0dcb3a2a780b"}}
+   :main-opts ["-m" "cognitect.test-runner"]}}}
