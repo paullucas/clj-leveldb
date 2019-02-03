@@ -5,7 +5,8 @@
   byte-streams {:mvn/version "0.2.4"}}
  :aliases
  {:dev
-  {:extra-deps {criterium {:mvn/version "0.4.4"}}}
+  {:extra-deps {org.clojure/clojure {:mvn/version "1.10.0"}
+                criterium {:mvn/version "0.4.4"}}}
   :test
   {:extra-paths ["test"]
    :extra-deps
