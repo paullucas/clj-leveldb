@@ -9,12 +9,12 @@ This is a self-contained wrapper around [LevelDB](https://code.google.com/p/leve
 deps.edn
 ``` clj
 {paullucas/clj-leveldb {:git/url "https://github.com/paullucas/clj-leveldb.git"
-                        :sha "9304c7b61ae73bea9c9e284a3e820759b75c1d57"}}
+                        :sha "28318e176a37957a438317451be487c3c26ae4a2"}}
 ```
 
 Run tests
 ``` sh
-clj -Atest
+clj -Atest:dev
 ```
 
 ### basic usage
